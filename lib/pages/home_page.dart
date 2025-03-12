@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/meteo_box.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,17 +16,23 @@ class HomePage extends StatelessWidget {
               end: Alignment.bottomCenter,
               colors: [
                 Color(0xFF0F1320), // Bleu très foncé presque noir en haut
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
                 Color(0xFF161B2F), // Bleu foncé légèrement plus clair en bas
+                // Color(0xFF0019FF), // Bleu foncé plus clair en bas
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
+                Color(0xFF0F1320), // Bleu très foncé presque noir en haut
               ],
             ),
           ),
-          child: Padding(
-            padding:
-                const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: const Column(children: [
-                Row(
+          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+          child: const Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -50,8 +57,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ]),
-            ),
+              ),
+              SizedBox(height: 20),
+              MeteoBox(),
+            ],
           ),
         ),
       ),
