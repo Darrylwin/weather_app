@@ -5,9 +5,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Welcome"),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(),
+      body: const Center(
+        child: Text(
+          "Welcome",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
