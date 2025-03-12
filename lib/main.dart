@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.dark(primary: Colors.white),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

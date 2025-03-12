@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/components/forecasting.dart';
 import 'package:weather_app/components/meteo_box.dart';
+import 'package:weather_app/components/my_filter_box.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final List<List> filters = [
+    [Icons.visibility, 'visibility'],
+    [Icons.wind_power, 'wind'],
+    [Icons.water_drop_sharp, 'humidity'],
+    [Icons.wb_sunny_outlined, 'UV'],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +36,11 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-          child: const Column(
+          padding: const EdgeInsets.fromLTRB(8, 13, 10, 8),
+          child: Column(
             children: [
-              Padding(
+              //location's get
+              const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,16 +68,53 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              MeteoBox(),
-              SizedBox(height: 25),
-              Row(
+
+              const SizedBox(height: 10),
+
+              //meteo box to display temperature and time (cloudy, rainy, ...)
+              const MeteoBox(),
+
+              const SizedBox(height: 22),
+
+              //list of forecating
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Forecasting(),
                   Forecasting(),
                   Forecasting(),
                   Forecasting(),
+                ],
+              ),
+
+              const SizedBox(height: 15),
+
+              //other arameters of the weather
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MyFilterBox(
+                    icon: filters[0][0],
+                    text: filters[0][1],
+                  ),
+                  MyFilterBox(
+                    icon: filters[1][0],
+                    text: filters[1][1],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 3),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MyFilterBox(
+                    icon: filters[2][0],
+                    text: filters[2][1],
+                  ),
+                  MyFilterBox(
+                    icon: filters[3][0],
+                    text: filters[3][1],
+                  ),
                 ],
               ),
             ],
