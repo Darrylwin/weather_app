@@ -20,22 +20,37 @@ class HomePage extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
+            padding:
+                const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: const AlignmentDirectional(3, 6),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        // color: Colors.deepPurple,
-                        shape: BoxShape.circle,
-                      ),
+              child: const Column(children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Location",
+                          style:
+                              TextStyle(color: Color(0xffB7B7B7), fontSize: 15),
+                        ),
+                        SizedBox(
+                          height: 10,
+                          child: Divider(
+                            thickness: 2,
+                            color: Color(0xff5D5D5D),
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
+                    Icon(
+                      Icons.location_city,
+                      color: Color.fromARGB(255, 86, 85, 85),
+                    ),
+                  ],
+                ),
+              ]),
             ),
           ),
         ),
