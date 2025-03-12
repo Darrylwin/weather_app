@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/forecasting.dart';
 import 'package:weather_app/components/meteo_box.dart';
 
 class HomePage extends StatelessWidget {
@@ -60,6 +61,16 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               MeteoBox(),
+              SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Forecasting(),
+                  Forecasting(),
+                  Forecasting(),
+                  Forecasting(),
+                ],
+              ),
             ],
           ),
         ),

@@ -15,16 +15,45 @@ class MeteoBox extends StatelessWidget {
           left: BorderSide(color: Colors.grey[600]!),
         ),
       ),
-      height: MediaQuery.of(context).size.height * .40,
-      width: MediaQuery.of(context).size.width * .78,
-      child: SvgPicture.asset(
-        "assets/icons/day_cloud.svg",
-        placeholderBuilder: (BuildContext context) => const SizedBox(
-          height: 150,
-          width: 150,
-          child: Center(child: Text('Erreur de chargement SVG')),
-        ),
-        height: 150,
+      // height: MediaQuery.of(context).size.height * .40,
+      width: MediaQuery.of(context).size.width * .75,
+      child: Column(
+        children: [
+          SvgPicture.asset(
+            "assets/icons/day_cloud.svg",
+            height: 100,
+          ),
+          const Text(
+            '18°',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Text(
+            'cloudy',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'Today',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const Text(
+            'Luck now',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const SizedBox(height: 10),
+        ],
       ),
     );
   }
