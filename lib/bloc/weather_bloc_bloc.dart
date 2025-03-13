@@ -17,12 +17,13 @@ class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
           language: Language.ENGLISH,
         );
         Weather weather = await weatherFactory.currentWeatherByLocation(
-          event.position.longitude,
           event.position.latitude,
+          event.position.longitude,
         );
-        print('\n\nWeather details: $weather\n\n');
+        // print('\n\nWeather details: $weather\n\n');
         emit(WeatherBlocSuccess(weather));
       } catch (e) {
+        // print('\n\nError fetching weather: $e\n\n');
         emit(WeatherBlocFailure());
       }
     });
