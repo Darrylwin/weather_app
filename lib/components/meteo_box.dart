@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MeteoBox extends StatelessWidget {
   const MeteoBox({super.key});
@@ -26,8 +25,8 @@ class MeteoBox extends StatelessWidget {
       width: MediaQuery.of(context).size.width * .75,
       child: Column(
         children: [
-          SvgPicture.asset(
-            "assets/icons/day_cloud.svg",
+          Image.asset(
+            "assets/icons/png/day_cloud.png",
             height: 100,
           ),
           const Text(
