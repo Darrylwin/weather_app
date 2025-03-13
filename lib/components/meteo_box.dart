@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MeteoBox extends StatelessWidget {
   const MeteoBox({super.key});
@@ -30,31 +31,31 @@ class MeteoBox extends StatelessWidget {
             "assets/icons/png/day_wind.png",
             height: 110,
           ),
-          const Text(
+          Text(
             '18°',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.lato(
+              fontSize: 33,
+              fontWeight: FontWeight.w700,
             ),
           ),
-          const Text(
+          Text(
             'cloudy',
-            style: TextStyle(
+            style: GoogleFonts.robotoCondensed(
               fontSize: 15,
               fontWeight: FontWeight.w400,
             ),
           ),
           const SizedBox(height: 20),
-          const Text(
+          Text(
             'Today',
-            style: TextStyle(
+            style: GoogleFonts.redRose(
               fontSize: 13,
               fontWeight: FontWeight.w400,
             ),
           ),
-          const Text(
+          Text(
             'Luck now',
-            style: TextStyle(
+            style: GoogleFonts.openSans(
               fontSize: 13,
               fontWeight: FontWeight.w400,
             ),

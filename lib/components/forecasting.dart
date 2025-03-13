@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Forecasting extends StatelessWidget {
   const Forecasting({super.key});

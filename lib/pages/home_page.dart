@@ -37,87 +37,91 @@ class HomePage extends StatelessWidget {
             ),
           ),
           padding: const EdgeInsets.fromLTRB(5, 13, 10, 5),
-          child: Column(
+          child: ListView(
             children: [
-              //location's get
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
+              Column(
+                children: [
+                  //location's get
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "Location",
-                          style:
-                              TextStyle(color: Color(0xffB7B7B7), fontSize: 15),
+                        Column(
+                          children: [
+                            Text(
+                              "Location",
+                              style: TextStyle(
+                                  color: Color(0xffB7B7B7), fontSize: 15),
+                            ),
+                            SizedBox(
+                              height: 10,
+                              child: Divider(
+                                thickness: 2,
+                                color: Color(0xff5D5D5D),
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          height: 10,
-                          child: Divider(
-                            thickness: 2,
-                            color: Color(0xff5D5D5D),
-                          ),
+                        Icon(
+                          Icons.location_city,
+                          color: Color.fromARGB(255, 86, 85, 85),
                         ),
                       ],
                     ),
-                    Icon(
-                      Icons.location_city,
-                      color: Color.fromARGB(255, 86, 85, 85),
-                    ),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              //meteo box to display temperature and time (cloudy, rainy, ...)
-              const MeteoBox(),
-
-              const SizedBox(height: 20),
-
-              //list of forecating
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Forecasting(),
-                  Forecasting(),
-                  Forecasting(),
-                  Forecasting(),
-                ],
-              ),
-
-              const SizedBox(height: 13),
-
-              //other arameters of the weather
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MyFilterBox(
-                    icon: filters[0][0],
-                    text: filters[0][1],
-                    value: filters[0][2],
                   ),
-                  MyFilterBox(
-                    icon: filters[1][0],
-                    text: filters[1][1],
-                    value: filters[1][2],
+
+                  const SizedBox(height: 10),
+
+                  //meteo box to display temperature and time (cloudy, rainy, ...)
+                  const MeteoBox(),
+
+                  const SizedBox(height: 20),
+
+                  //list of forecating
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Forecasting(),
+                      Forecasting(),
+                      Forecasting(),
+                      Forecasting(),
+                    ],
                   ),
-                ],
-              ),
-              const SizedBox(height: 3),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MyFilterBox(
-                    icon: filters[2][0],
-                    text: filters[2][1],
-                    value: filters[2][2],
+
+                  const SizedBox(height: 13),
+
+                  //other arameters of the weather
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      MyFilterBox(
+                        icon: filters[0][0],
+                        text: filters[0][1],
+                        value: filters[0][2],
+                      ),
+                      MyFilterBox(
+                        icon: filters[1][0],
+                        text: filters[1][1],
+                        value: filters[1][2],
+                      ),
+                    ],
                   ),
-                  MyFilterBox(
-                    icon: filters[3][0],
-                    text: filters[3][1],
-                    value: filters[3][2],
+                  const SizedBox(height: 3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      MyFilterBox(
+                        icon: filters[2][0],
+                        text: filters[2][1],
+                        value: filters[2][2],
+                      ),
+                      MyFilterBox(
+                        icon: filters[3][0],
+                        text: filters[3][1],
+                        value: filters[3][2],
+                      ),
+                    ],
                   ),
                 ],
               ),
