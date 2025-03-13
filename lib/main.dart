@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
         future: _determinePosition(),
         builder: (context, snapshot) => snapshot.hasData
             ? BlocProvider<WeatherBlocBloc>(
-                create: (context) =>
-                    WeatherBlocBloc()..add(FetchWeather(snapshot.data as Position)),
+                create: (context) => WeatherBlocBloc()
+                  ..add(FetchWeather(snapshot.data as Position)),
                 child: HomePage(),
               )
             : Scaffold(
@@ -101,6 +101,9 @@ class MyApp extends StatelessWidget {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    return await Geolocator.getCurrentPosition();
+
+    Position position = await Geolocator.getCurrentPosition();
+    // print('Position: ${position.latitude}, ${position.longitude}');
+    return position;
   }
 }
