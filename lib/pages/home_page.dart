@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          padding: const EdgeInsets.fromLTRB(8, 13, 10, 8),
+          padding: const EdgeInsets.fromLTRB(5, 13, 10, 5),
           child: Column(
             children: [
               //location's get
@@ -68,14 +68,14 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-
+      
               const SizedBox(height: 10),
-
+      
               //meteo box to display temperature and time (cloudy, rainy, ...)
               const MeteoBox(),
-
-              const SizedBox(height: 22),
-
+      
+              const SizedBox(height: 20),
+      
               //list of forecating
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,9 +86,9 @@ class HomePage extends StatelessWidget {
                   Forecasting(),
                 ],
               ),
-
-              const SizedBox(height: 15),
-
+      
+              const SizedBox(height: 13),
+      
               //other arameters of the weather
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
