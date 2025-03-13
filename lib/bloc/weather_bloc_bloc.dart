@@ -16,12 +16,11 @@ class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
           API_KEY,
           language: Language.ENGLISH,
         );
-        Position position = await Geolocator.getCurrentPosition();
         Weather weather = await weatherFactory.currentWeatherByLocation(
-          position.longitude,
-          position.latitude,
+          event.position.longitude,
+          event.position.latitude,
         );
-        print(weather);
+        print('\n\nWeather details: $weather\n\n');
         emit(WeatherBlocSuccess(weather));
       } catch (e) {
         emit(WeatherBlocFailure());
