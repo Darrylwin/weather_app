@@ -5,10 +5,12 @@ class MyFilterBox extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
+    required this.value,
   });
 
   final IconData? icon;
   final String text;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +24,26 @@ class MyFilterBox extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(35)),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Column(
+        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 6),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Icon(icon),
-              // const SizedBox(height: 5),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(icon),
+                  // const SizedBox(height: 5),
+                  Text(
+                    text,
+                    style: const TextStyle(
+                        fontSize: 10, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
               Text(
-                text,
-                style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+                value,
+                style:
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
               ),
             ],
           ),

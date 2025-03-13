@@ -7,10 +7,10 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   final List<List> filters = [
-    [Icons.visibility, 'visibility'],
-    [Icons.wind_power, 'wind'],
-    [Icons.water_drop_sharp, 'humidity'],
-    [Icons.wb_sunny_outlined, 'UV'],
+    [Icons.visibility, 'visibility', '1000 m'],
+    [Icons.air, 'wind', '7 km'],
+    [Icons.water_drop_sharp, 'humidity', '21 %'],
+    [Icons.wb_sunny_outlined, 'UV', '7\nstrong'],
   ];
 
   @override
@@ -68,14 +68,14 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-      
+
               const SizedBox(height: 10),
-      
+
               //meteo box to display temperature and time (cloudy, rainy, ...)
               const MeteoBox(),
-      
+
               const SizedBox(height: 20),
-      
+
               //list of forecating
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,9 +86,9 @@ class HomePage extends StatelessWidget {
                   Forecasting(),
                 ],
               ),
-      
+
               const SizedBox(height: 13),
-      
+
               //other arameters of the weather
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,10 +96,12 @@ class HomePage extends StatelessWidget {
                   MyFilterBox(
                     icon: filters[0][0],
                     text: filters[0][1],
+                    value: filters[0][2],
                   ),
                   MyFilterBox(
                     icon: filters[1][0],
                     text: filters[1][1],
+                    value: filters[1][2],
                   ),
                 ],
               ),
@@ -110,10 +112,12 @@ class HomePage extends StatelessWidget {
                   MyFilterBox(
                     icon: filters[2][0],
                     text: filters[2][1],
+                    value: filters[2][2],
                   ),
                   MyFilterBox(
                     icon: filters[3][0],
                     text: filters[3][1],
+                    value: filters[3][2],
                   ),
                 ],
               ),
