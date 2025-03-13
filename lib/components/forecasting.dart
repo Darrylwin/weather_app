@@ -17,9 +17,9 @@ class Forecasting extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SvgPicture.asset(
-            "assets/icons/day_cloud.svg",
-            height: 20,
+          Image.asset(
+            "assets/icons/png/day_cloud.png",
+            height: 25,
           ),
           const Text(
             '16°',

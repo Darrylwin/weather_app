@@ -15,7 +15,7 @@ class MyFilterBox extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Container(
-        height: 58.8,
+        height: 54,
         width: 110,
         decoration: const BoxDecoration(
           color: Color(0xff1E1D2B),

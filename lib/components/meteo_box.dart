@@ -25,9 +25,10 @@ class MeteoBox extends StatelessWidget {
       width: MediaQuery.of(context).size.width * .75,
       child: Column(
         children: [
+          const SizedBox(height: 10),
           Image.asset(
-            "assets/icons/png/day_cloud.png",
-            height: 100,
+            "assets/icons/png/day_wind.png",
+            height: 110,
           ),
           const Text(
             '18°',
