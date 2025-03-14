@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
 import 'package:weather_app/bloc/weather_bloc_bloc.dart';
 import 'package:weather_app/components/forecasting.dart';
@@ -7,14 +8,22 @@ import 'package:weather_app/components/meteo_box.dart';
 import 'package:weather_app/components/my_filter_box.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   List<List> getFilters(BuildContext context, Weather weather) {
     return [
-      [Icons.visibility, 'visibility', '1000 m'],
-      [Icons.air, 'wind', '${weather.windSpeed} km'],
+      [
+        Icons.thermostat,
+        'max temp',
+        '${weather.tempMax?.celsius?.toStringAsFixed(1)} °C',
+      ],
+      [Icons.air, 'wind', '${weather.windSpeed} km/h'],
       [Icons.water_drop_sharp, 'humidity', '${weather.humidity} %'],
-      [Icons.wb_sunny_outlined, 'UV', '7\nstrong']
+      [
+        Icons.wb_sunny_rounded,
+        'sunrise',
+        DateFormat().add_jm().format(weather.sunrise!),
+      ]
     ];
   }
 
@@ -83,9 +92,9 @@ class HomePage extends StatelessWidget {
                       children: [
                         //meteo box to display temperature and time (cloudy, rainy, ...)
                         const MeteoBox(),
-                    
+
                         // const Spacer(),
-                    
+
                         //list of forecating
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,7 +105,7 @@ class HomePage extends StatelessWidget {
                             Forecasting(),
                           ],
                         ),
-                    
+
                         // const SizedBox(height: 13),
                         // const Spacer(),
                         //other arameters of the weather

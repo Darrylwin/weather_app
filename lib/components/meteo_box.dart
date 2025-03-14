@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/bloc/weather_bloc_bloc.dart';
 
 class MeteoBox extends StatelessWidget {
@@ -38,7 +39,7 @@ class MeteoBox extends StatelessWidget {
                     "assets/icons/png/day_wind.png",
                     height: 110,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '${state.weather.temperature!.celsius!.round()} °c',
                     style: GoogleFonts.lato(
@@ -46,7 +47,7 @@ class MeteoBox extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '${state.weather.weatherMain}',
                     style: GoogleFonts.robotoCondensed(
@@ -56,7 +57,7 @@ class MeteoBox extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'Today',
+                    DateFormat('EEEE dd').add_jm().format(state.weather.date!),
                     style: GoogleFonts.redRose(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
