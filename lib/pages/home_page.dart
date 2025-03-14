@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
 import 'package:weather_app/bloc/weather_bloc_bloc.dart';
-import 'package:weather_app/components/forecasting.dart';
+import 'package:weather_app/components/forecast.dart';
 import 'package:weather_app/components/meteo_box.dart';
 import 'package:weather_app/components/my_filter_box.dart';
 
@@ -56,6 +56,7 @@ class HomePage extends StatelessWidget {
             if (state is WeatherBlocSuccess) {
               List<List> filters = getFilters(context, state.weather);
               return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //location's get
                   Padding(
@@ -88,7 +89,7 @@ class HomePage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         //meteo box to display temperature and time (cloudy, rainy, ...)
                         const MeteoBox(),
@@ -99,16 +100,14 @@ class HomePage extends StatelessWidget {
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Forecasting(),
-                            Forecasting(),
-                            Forecasting(),
-                            Forecasting(),
+                            Forecast(),
+                            Forecast(),
+                            Forecast(),
+                            Forecast(),
                           ],
                         ),
 
-                        // const SizedBox(height: 13),
-                        // const Spacer(),
-                        //other arameters of the weather
+                        // other arameters of the weather
                         Column(
                           children: [
                             Row(
@@ -126,7 +125,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 3),
+                            const SizedBox(height: 15),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -144,6 +143,26 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
+
+                        // const SizedBox(height: 3),
+
+                        // GridView.builder(
+                        //   gridDelegate:
+                        //       const SliverGridDelegateWithFixedCrossAxisCount(
+                        //     crossAxisCount: 2,
+                        //     // childAspectRatio: 1 / .7,
+                        //   ),
+                        //   itemBuilder: (context, index) {
+                        //     return MyFilterBox(
+                        //       icon: filters[index][0],
+                        //       text: filters[index][1],
+                        //       value: filters[index][2],
+                        //     );
+                        //   },
+                        //   itemCount: filters.length,
+                        //   physics: const NeverScrollableScrollPhysics(),
+                        //   padding: const EdgeInsets.all(8),
+                        // ),
                       ],
                     ),
                   ),

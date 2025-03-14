@@ -17,26 +17,27 @@ class MyFilterBox extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Container(
-        height: 54,
-        width: 110,
+        height: 73,
+        width: 125,
         decoration: const BoxDecoration(
           color: Color(0xff1E1D2B),
           borderRadius: BorderRadius.all(Radius.circular(35)),
         ),
+        padding: const EdgeInsets.all(4),
         child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 6),
+          padding: const EdgeInsets.all(8),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(icon),
-                  // const SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
                     text,
                     style: const TextStyle(
-                        fontSize: 10, fontWeight: FontWeight.w400),
+                        fontSize: 13, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),

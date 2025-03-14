@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Forecasting extends StatelessWidget {
-  const Forecasting({super.key});
+class Forecast extends StatelessWidget {
+  const Forecast({super.key});
 
   @override
   Widget build(BuildContext context) {
