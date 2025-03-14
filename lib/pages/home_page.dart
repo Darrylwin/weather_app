@@ -8,7 +8,7 @@ import 'package:weather_app/components/meteo_box.dart';
 import 'package:weather_app/components/my_filter_box.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   List<List> getFilters(BuildContext context, Weather weather) {
     return [
@@ -26,6 +26,13 @@ class HomePage extends StatelessWidget {
       ]
     ];
   }
+
+  List<List> forecasts = [
+    [21, 'ThunderStorm', 'Friday 14'],
+    [31, 'Clouds', 'Friday 14'],
+    [13, 'Rainy', 'Friday 14'],
+    [-13, 'Snow', 'Friday 14'],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -97,13 +104,29 @@ class HomePage extends StatelessWidget {
                         // const Spacer(),
 
                         //list of forecating
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Forecast(),
-                            Forecast(),
-                            Forecast(),
-                            Forecast(),
+                            Forecast(
+                              temperature: forecasts[0][0],
+                              weatherMain: forecasts[0][1],
+                              day: forecasts[0][2],
+                            ),
+                            Forecast(
+                              temperature: forecasts[1][0],
+                              weatherMain: forecasts[1][1],
+                              day: forecasts[1][2],
+                            ),
+                            Forecast(
+                              temperature: forecasts[2][0],
+                              weatherMain: forecasts[2][1],
+                              day: forecasts[2][2],
+                            ),
+                            Forecast(
+                              temperature: forecasts[3][0],
+                              weatherMain: forecasts[3][1],
+                              day: forecasts[3][2],
+                            ),
                           ],
                         ),
 
